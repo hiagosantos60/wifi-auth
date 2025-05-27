@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Concedido | WiFi Portal</title>
+    <link rel="stylesheet" href="style_pos.css">
+    <link rel="stylesheet" href="../public/assets/css/style.css">
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-header">
+            <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h1>Acesso Concedido!</h1>
+        </div>
+
+        <div class="success-content">
+            <p>Bem-vindo, <span class="user-email"><?= htmlspecialchars($_SESSION['email'] ?? 'Visitante') ?></span>!</p>
+            
+            <div class="connection-details">
+                <div class="detail-row">
+                    <span class="detail-label">Endereço IP:</span>
+                    <span class="detail-value"><?= htmlspecialchars($_SERVER['REMOTE_ADDR']) ?></span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Data/Hora:</span>
+                    <span class="detail-value"><?= date('d/m/Y H:i:s') ?></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="success-footer">
+            <p>Você está conectado à rede WiFi.</p>
+            <a href="#" class="btn-logout">Encerrar Sessão</a>
+        </div>
+    </div>
+</body>
+</html>
